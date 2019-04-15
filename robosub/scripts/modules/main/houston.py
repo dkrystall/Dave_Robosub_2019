@@ -43,7 +43,7 @@ class Houston():
     #'chip','pinger_a','roulette', 'pinger_b', 'cash_in']
 
     def __init__(self, navigation, task_list):
-        """ To initilize Houston """
+        """ To initialize Houston """
         ################ INSTANCES ################
         self.pregate = PreGate(self)
         self.gate = Gate(self)
