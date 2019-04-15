@@ -54,11 +54,11 @@ class RunDVL:
 
         # ROS publisher setup
         pub = rospy.Publisher('dvl_status', DVL, queue_size = 1)
-        # pubHeading = rospy.Publisher('dvl_heading', Float32, queue_size = 1)
+        pubHeading = rospy.Publisher('dvl_heading', Float32, queue_size = 1)
         pubSS = rospy.Publisher('dvl_ss', Float32, queue_size = 1)
         rospy.Subscriber('current_rotation', Rotation, self.rCallBack, queue_size = 1)
         msg = DVL()
-        # msgHeading = Float32()
+        msgHeading = Float32()
         msgSS = Float32()
 
         #PD6 settings --------------------------------------------------------------
@@ -168,17 +168,17 @@ class RunDVL:
                     msg.zvel = up_vel
                     pub.publish(msg)
 
-                # elif line[:3] == ":SA": #If the message is orientation
-                #     line = line.split(",")
-                #     # pitch = float(line[1])
-                #     # roll = float(line[2])
-                #     print(line[0])
-                #     print(line[1])
-                #     print(line[2])
-                #     print(line[3])
-                #     dvl_heading = float(line[3])
-                #     msgHeading.data = dvl_heading
-                #     pubHeading.publish(msgHeading)
+                elif line[:3] == ":SA": #If the message is orientation
+                    line = line.split(",")
+                    # pitch = float(line[1])
+                    # roll = float(line[2])
+                    print(line[0])
+                    print(line[1])
+                    print(line[2])
+                    print(line[3])
+                    dvl_heading = float(line[3])
+                    msgHeading.data = dvl_heading
+                    pubHeading.publish(msgHeading)
 
                 elif line[:3] == ":TS": #If the message is a timestamp
                     line = line.split(",")
