@@ -970,7 +970,7 @@ void rotationControl(){
     temp = -(delta);
   }
 
-  if (max(current_heading,heading) - min(current_heading,heading) <= rotationThreshold){
+  if (max(current_heading,assignedYaw) - min(current_heading,assignedYaw) <= rotationThreshold){
     ROS_INFO("Stopped using DVL heading and IMU.\n");
     stop_Rotation = true;
   }
