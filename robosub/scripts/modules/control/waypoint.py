@@ -14,7 +14,7 @@ class Waypoint():
         self.heading = None
         self.depth = None
         self.waypoint_list = deque()
-        #self.waypoint_list_height_test = deque()
+        self.waypoint_list_height_test = deque()
 
 
         # rospy.init_node('waypoint_node', anonymous=True)
@@ -61,7 +61,6 @@ class Waypoint():
     def clear_all(self):
         self.waypoint_list = []
         self.waypoint_list_height_test = []
-        self.waypoint_list = []
 
     def dequeue(self):
         if self.waypoint_list:
@@ -73,8 +72,8 @@ class Waypoint():
     def run_through(self):
         if self.waypoint_list:
             ret = self.waypoint_list.popleft()
-	        return ret
-	    return None
+	    return ret
+	return None
 
     def display_waypoints(self):
         if self.waypoint_list:
