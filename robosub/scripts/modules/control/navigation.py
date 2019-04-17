@@ -335,7 +335,7 @@ class Navigation():
                 self.current_waypoint_y = last_y
                 direction_r, degree_r, distance_m = self.waypoint.get_directions(
                      last_x, last_y)
-                 direction_h, distance_h = self.waypoint.get_depth_directions(
+                direction_h, distance_h = self.waypoint.get_depth_directions(
                      last_depth)
                 self.go_waypoint(direction_r, degree_r, r_power,
                                   direction_h, distance_h, h_power, distance_m, m_power)
