@@ -7,7 +7,7 @@ from modules.control.navigation import Navigation
 from modules.control.keyboard import Keyboard
 import modules.servos.dropper as dropper
 import modules.servos.torpedo as torpedo
-import modules.main.status as status
+#import modules.main.status as status
 
 from houston import Houston
 

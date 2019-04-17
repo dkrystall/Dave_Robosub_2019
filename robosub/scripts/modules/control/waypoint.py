@@ -73,8 +73,8 @@ class Waypoint():
     def run_through(self):
         if self.waypoint_list:
             ret = self.waypoint_list.popleft()
-	        return ret
-	    return None
+	    return ret
+	return None
 
     def display_waypoints(self):
         if self.waypoint_list:

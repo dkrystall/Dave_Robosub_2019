@@ -1,7 +1,7 @@
 import rospy
 from robosub.msg import Torpedo
-from std_msgs import Int8
-from modules.main.status import log
+from std_msgs.msg import Int8
+#from modules.main.status import log
 
 """ Controls torpedoes"""
 
@@ -14,7 +14,7 @@ SIDES = {
 
 torpedo = Torpedo()
 pub = rospy.Publisher('torpedo', Torpedo, queue_size=100)
-pubLed = rospy.Publisher('led', ledIndicator, queue_size=1)
+pubLed = rospy.Publisher('led', Int8, queue_size=1)
 
 def prime_torpedo(side):
     """
@@ -37,8 +37,7 @@ def fire_torpedo(side):
 
     if side in SIDES:
         torpedo.state = FIRE_TORPEDO
-        ledIndicator.data = 14
         torpedo.torpedo_number = SIDES[side]
         pub.publish(torpedo)
-        pubLed.publish(ledIndicator)
+        pubLed.publish(14)
         print('fire %s torpedo' % side)

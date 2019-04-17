@@ -335,7 +335,7 @@ class Navigation():
                 self.current_waypoint_y = last_y
                 direction_r, degree_r, distance_m = self.waypoint.get_directions(
                      last_x, last_y)
-                 direction_h, distance_h = self.waypoint.get_depth_directions(
+                direction_h, distance_h = self.waypoint.get_depth_directions(
                      last_depth)
                 self.go_waypoint(direction_r, degree_r, r_power,
                                   direction_h, distance_h, h_power, distance_m, m_power)
@@ -343,7 +343,7 @@ class Navigation():
 
         print('finished running all waypoints')
 
-    def run_queue_waypoints_async(self, r_power=self.r_power, h_power=self.h_power, m_power=self.m_power):
+    def run_queue_waypoints_async(self, r_power=None, h_power=None, m_power=None):
         if not r_power:
             r_power = self.r_power
         if not h_power:

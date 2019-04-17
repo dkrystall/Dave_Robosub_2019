@@ -4,7 +4,7 @@ import subprocess
 import time
 import os
 from modules.main.auv import AUV  # Import auv
-import modules.main.status as status  # Import status logger
+#import modules.main.status as status  # Import status logger
 class CLI(cmd.Cmd):
     """AUV command line interpreter"""
 

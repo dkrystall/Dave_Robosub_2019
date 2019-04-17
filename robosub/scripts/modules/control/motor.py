@@ -1,6 +1,6 @@
 import rospy
 from robosub.msg import HControl
-from modules.main.status import log
+#from modules.main.status import log
 
 
 class Motor():
