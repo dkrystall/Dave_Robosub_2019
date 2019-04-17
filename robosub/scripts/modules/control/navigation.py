@@ -61,7 +61,7 @@ class Navigation():
             'front_cam_center': 3,  # centered with front camera
             'bot_cam_center': 4,  # centered with bottom camera
             'motor_time': 5  # turn on motor with specific time
-}
+        }
         self.directions = {
             'none': 0,
             'forward': 1,

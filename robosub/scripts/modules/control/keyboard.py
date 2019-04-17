@@ -251,7 +251,7 @@ class Keyboard():
         elif char == 'd':
             self.navigation.cancel_all_nav()
             #self.navigation.cancel_r_nav()
-            self.navigation.r_nav('left',rotation,self.r_power)
+            self.navigation.r_nav('right',rotation,self.r_power)
             #self.navigation.cancel_and_r_nav('right', rotation, self.r_power)
             if char != last_char:
                 print('Rotating right - degrees %d' % rotation)
