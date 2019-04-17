@@ -61,7 +61,7 @@ class Navigation():
             'front_cam_center': 3,  # centered with front camera
             'bot_cam_center': 4,  # centered with bottom camera
             'motor_time': 5  # turn on motor with specific time
-}
+        }
         self.directions = {
             'none': 0,
             'forward': 1,
@@ -343,7 +343,7 @@ class Navigation():
 
         print('finished running all waypoints')
 
-    def run_queue_waypoints_async(self, r_power=self.r_power, h_power=self.h_power, m_power=self.m_power):
+    def run_queue_waypoints_async(self, r_power=None, h_power=None, m_power=None):
         if not r_power:
             r_power = self.r_power
         if not h_power:
