@@ -1,7 +1,20 @@
+# Dave's Branch 
+the darknet_ros project is embedded in the Dave_Robosub project, so you have to clone that in there after you clone Dave_Robosub2019_Dave from: git@github.com:dkrystall/darknet. 
+The darknet node is run using `roslaunch darknet_ros <config>` 
+so the current config for this project is yolov3-bumblebee
+`roslaunch darknet_ros yolov3-bumblebee`
+The weights are too large to upload to git, so ask Erika or myself for weights.
+
+## todo
+After the module is working with bumblebee's code, we will then add a configuration for the gate test and whatever new classfiers we complete.
+Currently, the subscriber and publisher in the image_test directory are having some issues, the ros topics show up, but the echos print nothing, will have to debug
+
 # Robosub 2019
 
 Uses ROS Melodic for Ubuntu 18.04
 and python 2.7.13
+
+
 
 ## First time setup:
 
