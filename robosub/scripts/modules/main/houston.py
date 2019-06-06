@@ -174,7 +174,7 @@ class Houston():
     def print_tasks(self):
         counter = 0
         for i in self.tasks:
-            print '{}: {}'.format(counter, i)
+            print('{}: {}'.format(counter, i))
             counter += 1
 
     # start_task ##################################################################################
@@ -182,16 +182,16 @@ class Houston():
         if not self.is_task_running:
             self.task_thread_start(one_or_all, task_choice)
         else:
-            print '\nTask is currently running.'
-            print '\nPlease wait for task to finish or cancel'
+            print('\nTask is currently running.')
+            print('\nPlease wait for task to finish or cancel')
 
     # start_task_from_gui ##################################################################################
     def start_task_from_gui(self, one_or_all, task_name):
         if not self.is_task_running:
             self.task_thread_start(one_or_all, self.gui_task_calls[task_name])
         else:
-            print '\nTask is currently running.'
-            print '\nPlease wait for task to finish or cancel'
+            print('\nTask is currently running.')
+            print('\nPlease wait for task to finish or cancel')
 
     # start_all_tasks ##################################################################################
     def start_all_tasks(self, _):
@@ -254,8 +254,8 @@ class Houston():
         #self.navigation.cancel_r_nav()
         self.current_taskList = self.taskList[task_num]
 
-        print '\nattempting to run task number: {}\
-               \ntask: {}'.format(task_num, self.current_taskList.task_name)
+        print('\nattempting to run task number: {}\
+               \ntask: {}'.format(task_num, self.current_taskList.task_name))
 
         self.current_taskList.reset()
         self.current_taskList.start(self.current_taskList.task_name, self.navigation, self.cvcontroller, self.power, self.rotation)
@@ -268,7 +268,7 @@ class Houston():
             self.current_taskList.stop_task = True
             self.all_task_loop = False
         except:
-            print 'no task currently running to stop'
+            print('no task currently running to stop')
 
         self.cancel_all_nav()
         #self.navigation.cancel_h_nav()
@@ -281,14 +281,14 @@ class Houston():
         if self.current_taskList.is_task_running:
             return self.cvcontroller.current_raw_frame()
         else:
-            print 'camera is currently not running'
+            print('camera is currently not running')
 
     # return_processed_frame ##################################################################################
     def return_processed_frame(self):
         if self.current_taskList.is_task_running:
             return self.cvcontroller.current_processed_frame()
         else:
-            print 'camera is currently not running'
+            print('camera is currently not running')
 
     # task_thread_start ##################################################################################
     # def task_thread_start(self, task_call, task_name, navigation, cvcontroller, power, rotation):
@@ -318,7 +318,8 @@ class Houston():
         # self.get_task()
         # similar start to other classes, such as auv, and keyboard
         # self.is_killswitch_on = True
-        self.navigation.start()
+        #self.navigation.start()
+        print("Starting...")
 
     # stop ##################################################################################
     def stop(self):

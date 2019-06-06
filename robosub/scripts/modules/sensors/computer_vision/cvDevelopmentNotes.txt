@@ -1,0 +1,3 @@
+CV functions should return where the boxes are and what's detected 
+make API for Houston to load the model
+should return boxes and classes detected 

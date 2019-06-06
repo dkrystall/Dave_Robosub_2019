@@ -72,13 +72,13 @@ class Waypoint():
     def run_through(self):
         if self.waypoint_list:
             ret = self.waypoint_list.popleft()
-	    return ret
-	return None
+            return ret
+        return None
 
     def display_waypoints(self):
         if self.waypoint_list:
             for i in self.waypoint_list:
-                print i
+                print(i)
         else:
             print('No waypoints in queue')
 
@@ -102,7 +102,7 @@ class Waypoint():
     def display_height_waypoints(self):
             if self.waypoint_list_height_test:
                 for i in self.waypoint_list_height_test:
-                    print i
+                    print(i)
             else:
                 print('No waypoints in queue')
 

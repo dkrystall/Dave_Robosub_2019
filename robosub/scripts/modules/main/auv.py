@@ -9,7 +9,7 @@ import modules.servos.dropper as dropper
 import modules.servos.torpedo as torpedo
 #import modules.main.status as status
 
-from houston import Houston
+from .houston import Houston
 
 """
 Set up for Houston and all other modules, container that holds all instances of Houston,

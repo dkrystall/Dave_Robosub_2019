@@ -4,7 +4,7 @@ from robosub.msg import HControl
 from robosub.msg import RControl
 from robosub.msg import MControl
 import math
-from waypoint import Waypoint
+from .waypoint import Waypoint
 from threading import Thread
 import time
 

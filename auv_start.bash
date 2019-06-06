@@ -12,5 +12,7 @@ gnome-terminal -x sh -c "rosrun hardware_interface hardware_interface; bash"
 #gnome-terminal -x sh -c "rosrun rosserial_python serial_node_uno.py; bash"
 sleep 1
 gnome-terminal -x sh -c "cd robosub/scripts/; python cli_robosub.py; bash"
+sleep 1
+gnome-terminal -x sh -c "roslaunch darknet_ros; bash"
 
 # gnome-terminal -x sh -c "rosrun rosserial_python serial_node_servo.py; bash"

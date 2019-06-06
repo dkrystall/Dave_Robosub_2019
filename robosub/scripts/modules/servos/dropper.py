@@ -33,4 +33,4 @@ def drop_control(state):
         dropper.state = state
         pub.publish(dropper)
         pubLed.publish(18)
-        print DROP_OPTIONS[state]
+        print(DROP_OPTIONS[state])
