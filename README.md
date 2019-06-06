@@ -5,6 +5,8 @@ so the current config for this project is yolov3-bumblebee
 `roslaunch darknet_ros yolov3-bumblebee`
 The weights are too large to upload to git, so ask Erika or myself for weights.
 
+There are much more detailed instructions in the darknet_ros repo
+
 ## todo
 After the module is working with bumblebee's code, we will then add a configuration for the gate test and whatever new classfiers we complete.
 Currently, the subscriber and publisher in the image_test directory are having some issues, the ros topics show up, but the echos print nothing, will have to debug
