@@ -4,9 +4,7 @@ import subprocess
 import time
 import os
 from modules.main.auv import AUV  # Import auv
-import modules.main.status as status  # Import status logger
-
-
+#import modules.main.status as status  # Import status logger
 class CLI(cmd.Cmd):
     """AUV command line interpreter"""
 
@@ -148,7 +146,7 @@ class CLI(cmd.Cmd):
             try:
                 arg = int(arg)
             except:
-                print '\nINVALID NUMBER INPUT'
+                print('\nINVALID NUMBER INPUT')
                 pass
 
             if arg >= 0 and arg <= len(AUV.houston.tasks):

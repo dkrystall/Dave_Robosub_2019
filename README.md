@@ -1,6 +1,6 @@
-# Robosub 2018
+# Robosub 2019
 
-Uses ROS Lunar for Ubuntu 17.04 
+Uses ROS Melodic for Ubuntu 18.04
 and python 2.7.13
 
 ## First time setup:
@@ -19,7 +19,7 @@ and python 2.7.13
 
 ### In terminal:
 - enter command to navigate to workspace:
-	roscd 
+	roscd
 
 - enter command to navigate to the workspace src folder:
 	cd ../src
@@ -33,21 +33,25 @@ and python 2.7.13
 	roscore
 
 - open a new terminal and enter following commands:
-	roscd robosub/scripts/
-	python robosub_cli.py
+		roscd pathfinder_dvl/scripts/
+		python pathfindDvl.py
 
 - open a new terminal and enter following command:
 	rosrun ez_async_data ez_async_data
-
-- open a new terminal and enter following commands:
-	roscd pathfinder_dvl/scripts/
-	python pathfindDvl.py
 
 - open a new terminal and enter following command:
 	rosrun rosserial_python serial_node_mega.py
 
 - open a new terminal and enter following command:
-	rosrun hardware_interface hardware_interface
+		rosrun hardware_interface hardware_interface
+
+- open a new terminal and enter following command:
+		rosrun rosserial_python serial_node.py
+
+- open a new terminal and enter following commands:
+		roscd robosub/scripts/
+		python cli_robosub.py
+
 
 #### then:
 
@@ -67,4 +71,3 @@ and python 2.7.13
 		navigation cv 1
 	- to cancel any task that is run enter:
 		task
-

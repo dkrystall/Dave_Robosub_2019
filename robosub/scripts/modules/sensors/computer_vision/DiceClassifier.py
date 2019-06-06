@@ -2,6 +2,9 @@ import cv2
 import glob
 import numpy as np
 import pandas as pd
+import argparse
+import os
+import time
 from sklearn.svm import SVC
 from sklearn.externals import joblib
 from sklearn.model_selection import train_test_split
@@ -12,7 +15,7 @@ class DiceClassifier:
     def __init__(self):
         self.new_struct_path = 'modules/sensors/computer_vision/' # project folder struct
         self.model_path = self.new_struct_path + 'models/dice/'
-        self.positive_image_path = self.new_struct_path + 'data/dice/positive/*.jpg'
+        #self.positive_image_path = self.new_struct_path + 'data/dice/positive/*.jpg'
         self.negative_image_path = self.new_struct_path + 'data/dice/negative/*.jpg'
         self.task_model_config_name = "DiceSVMstd"
         self.model_name = self.get_model_name('cv', self.task_model_config_name)
