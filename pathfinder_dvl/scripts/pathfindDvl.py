@@ -13,6 +13,7 @@ class RunDVL:
         self.yaw = 0
         self.pitch = 0
         self.roll = 0
+        print("Init finished, values set to: yaw={0.yaw}, pitch={0.pitch}, roll={0.roll}").format(self)
     # self.yaw will always only have a length of 1 max to keep most updated
     # imu is 0 degrees west 90 deg north -90 deg south +- 180 east
     # dvl takes 0 - 359.99 with 0 deg north, 90 deg east, 180 south, and 270 west
@@ -199,5 +200,8 @@ dvl = RunDVL()
 if __name__ == '__main__':
     try:
         dvl.main()
+        print("running dvl.main()")
     except rospy.ROSInterruptException:
+        print("exception triggered: \(rospy.RosInterruptException)")
+        print(rospy.ROSInterruptException)
         pass
