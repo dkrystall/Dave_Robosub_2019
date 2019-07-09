@@ -7,18 +7,24 @@ from ez_async_data.msg import Rotation
 from std_msgs.msg import Float32
 import serial
 import time
+import logging
+
+
+logging.basicConfig(filename='app.log', filemode='w',format='%(asctime)s - %(levelname)s- %(message)s', level=logging.DEBUG)
+logging.info("Setting up logger...")
 
 class RunDVL:
     def __init__(self):
         self.yaw = 0
         self.pitch = 0
         self.roll = 0
-        print("Init finished, values set to: yaw={0.yaw}, pitch={0.pitch}, roll={0.roll}").format(self)
+        logging.debug("Init finished, values set to: yaw={0.yaw}, pitch={0.pitch}, roll={0.roll}".format(self))
     # self.yaw will always only have a length of 1 max to keep most updated
     # imu is 0 degrees west 90 deg north -90 deg south +- 180 east
     # dvl takes 0 - 359.99 with 0 deg north, 90 deg east, 180 south, and 270 west
     # this is assuming typical nautical heading
     def rCallBack(self, rotation):
+        logging.debug("inside pathfindDvl.rCallBack, args: self: {0.self} , rotation: {0.rotation}".format(self))
         if 90 <= rotation.yaw and rotation.yaw <= 180:
             heading = rotation.yaw - 90
         else:
@@ -35,9 +41,9 @@ class RunDVL:
         self.roll = rotation.roll
 
         # print('current yaw: %.2f' % self.yaw)
-
+        logging.debug("exiting rCallBack")
     def main(self):
-
+        logging.debug("Inside pathfindDvl.main()")
         #########################INITALIZE DVL SERIAL################################
 
         #dvl = serial.Serial("COM13", 115200) #Windows Serial

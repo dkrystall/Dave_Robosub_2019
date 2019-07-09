@@ -4,7 +4,7 @@ project(image_transport_tutorial)
 find_package(catkin REQUIRED COMPONENTS cv_bridge image_transport message_generation sensor_msgs)
 
 # add the resized image message
-add_message_files(DIRECTORY msg
+add_message_files(
    FILES ResizedImage.msg
 )
 generate_messages(DEPENDENCIES sensor_msgs)
